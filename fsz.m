@@ -1,4 +1,5 @@
 % fsz - fNIRS seizure analysis
+D = fsz_org_housekeeping;
 
 % Housekeeping
 
