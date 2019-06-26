@@ -1,4 +1,4 @@
-function D = fsz_org_housekeeping
+function F = fsz_org_housekeeping
 
 fs          = filesep;
 spm('defaults', 'eeg');
@@ -6,20 +6,20 @@ spm('defaults', 'eeg');
 try     load('fsz_org_housekeeping.mat');   
     
 catch
-    Fscripts    = spm_select(1, 'dir', 'Please point to the SCRIPTS folder');
-    Fdata       = spm_select(1, 'dir', 'Please point to the DATA folder');
-    Fanalysis   = spm_select(1, 'dir', 'Please point to the ANALYSIS folder');
+    scripts    = spm_select(1, 'dir', 'Please point to the SCRIPTS folder');
+    data       = spm_select(1, 'dir', 'Please point to the DATA folder');
+    analysis   = spm_select(1, 'dir', 'Please point to the ANALYSIS folder');
     
 
     % Pack for exporting
     %==========================================================================
-    D.Fscripts  = Fscripts;
-    D.Fdata     = Fdata;
-    D.Fanalysis = Fanalysis;
+    F.scripts  = scripts;
+    F.data     = data;
+    F.analysis = analysis;
    
-    save([Fscripts fs 'fsz_org_housekeeping.mat']);
+    save([F.scripts fs 'fsz_org_housekeeping.mat'], 'F');
 end
 
-addpath(genpath(Fscripts));
-addpath(Fdata); 
-addpath(Fanalysis);
+addpath(genpath(F.scripts));
+addpath(F.data); 
+addpath(F.analysis);
